@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Car, MapPin, Star, Phone, Mail, Clock, Users, Award, Shield, Zap, Heart } from 'lucide-react';
+import React from 'react';
 import './App.css';
 
 function App() {
@@ -95,10 +94,18 @@ function App() {
         boxShadow: '0 2px 20px rgba(0,0,0,0.3)',
         borderBottom: '1px solid rgba(255,215,0,0.2)'
       }}>
-        <div style={{maxWidth: 1200, margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px'}}>
+        <div style={{
+          maxWidth: 1200, 
+          margin: '0 auto', 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          padding: '0 20px',
+          flexWrap: 'wrap',
+          gap: '16px'
+        }}>
           {/* Logo */}
           <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
-            <div style={{fontSize: '2rem', color: '#FFD700'}}>🚗</div>
             <div>
               <div style={{fontWeight: 800, fontSize: '1.8rem', color: '#FFD700', letterSpacing: 1}}>YouOwn</div>
               <div style={{fontSize: '0.9rem', color: '#fff', opacity: 0.8}}>Luxury Car Rentals</div>
@@ -106,7 +113,7 @@ function App() {
           </div>
           
           {/* Navigation */}
-          <nav style={{display: 'flex', gap: 32, alignItems: 'center'}}>
+          <nav className="mobile-nav" style={{display: 'flex', gap: 32, alignItems: 'center'}}>
             <a href="#home" style={{color: '#FFD700', textDecoration: 'none', fontWeight: 600, fontSize: '1rem'}}>Home</a>
             <a href="#about" style={{color: '#fff', textDecoration: 'none', fontWeight: 500, fontSize: '1rem', opacity: 0.8}}>About</a>
             <a href="#services" style={{color: '#fff', textDecoration: 'none', fontWeight: 500, fontSize: '1rem', opacity: 0.8}}>Services</a>
@@ -170,7 +177,7 @@ function App() {
           }}>
             <span style={{color: '#FFD700', fontSize: '0.9rem', fontWeight: 600}}>Premium Luxury Car Rentals</span>
           </div>
-          <h1 style={{
+          <h1 className="banner-title" style={{
             fontSize: '3.5rem', 
             fontWeight: 800, 
             color: '#FFD700', 
@@ -179,14 +186,14 @@ function App() {
             textShadow: '0 4px 24px rgba(0,0,0,0.5)',
             lineHeight: 1.2
           }}>Arrive in Style</h1>
-          <h2 style={{
+          <h2 className="banner-subtitle" style={{
             fontSize: '2.2rem',
             fontWeight: 600,
             color: '#fff',
             marginBottom: 24,
             textShadow: '0 2px 12px rgba(0,0,0,0.5)'
           }}>Book Your Dream Car</h2>
-          <p style={{
+          <p className="banner-text" style={{
             fontSize: '1.3rem', 
             color: '#fff', 
             fontWeight: 400, 
@@ -226,7 +233,7 @@ function App() {
 
       {/* Stats Section */}
       <section style={{background: '#181c24', padding: '60px 0', textAlign: 'center'}}>
-        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
+        <div className="stats-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 40, maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
           <div>
             <div style={{fontSize: '3rem', fontWeight: 800, color: '#FFD700', marginBottom: 12}}>500+</div>
             <div style={{fontSize: '1.1rem', color: '#fff', opacity: 0.8}}>Happy Clients</div>
@@ -249,11 +256,11 @@ function App() {
       {/* Features Section */}
       <section style={{padding: '80px 0', background: '#10131a'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
-          <h2 style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Why Choose YouOwn?</h2>
+          <h2 className="section-title" style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Why Choose YouOwn?</h2>
           <p style={{textAlign: 'center', fontSize: '1.2rem', color: '#fff', opacity: 0.8, marginBottom: 60, maxWidth: 600, margin: '0 auto 60px auto'}}>
             We provide the best luxury car rental experience with premium vehicles and exceptional service.
           </p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32}}>
             {features.map((feature, idx) => (
               <div key={idx} style={{
                 background: '#181c24', 
@@ -284,12 +291,12 @@ function App() {
       {/* About Section */}
       <section id="about" style={{padding: '80px 0', background: '#181c24'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px', textAlign: 'center'}}>
-          <h2 style={{fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>About YouOwn</h2>
+          <h2 className="section-title" style={{fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>About YouOwn</h2>
           <p style={{fontSize: '1.3rem', color: '#fff', opacity: 0.9, maxWidth: 800, margin: '0 auto 50px auto', lineHeight: 1.7}}>
             YouOwn is the premier luxury car rental service, offering the finest collection of premium vehicles for all your special occasions. 
             From elegant weddings to corporate events, we ensure you travel in style and comfort with our professional service.
           </p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32, marginTop: 50}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32, marginTop: 50}}>
             <div style={{background: '#10131a', padding: 40, borderRadius: 20, textAlign: 'center', border: '1px solid rgba(255,215,0,0.1)'}}>
               <div style={{fontSize: '4rem', marginBottom: 20}}>🏆</div>
               <h3 style={{fontSize: '1.4rem', color: '#FFD700', marginBottom: 16, fontWeight: 600}}>Premium Quality</h3>
@@ -312,11 +319,11 @@ function App() {
       {/* Services Section */}
       <section id="services" style={{padding: '80px 0', background: '#10131a'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
-          <h2 style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Our Services</h2>
+          <h2 className="section-title" style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Our Services</h2>
           <p style={{textAlign: 'center', fontSize: '1.2rem', color: '#fff', opacity: 0.8, marginBottom: 60, maxWidth: 600, margin: '0 auto 60px auto'}}>
             We offer comprehensive luxury car rental services for all your special occasions and business needs.
           </p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32}}>
             {services.map((service, idx) => (
               <div key={idx} style={{
                 background: '#181c24', 
@@ -347,11 +354,11 @@ function App() {
       {/* Cars Section */}
       <main id="fleet" style={{padding: '80px 0', background: '#181c24'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
-          <h2 style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Our Luxury Fleet</h2>
+          <h2 className="section-title" style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Our Luxury Fleet</h2>
           <p style={{textAlign: 'center', fontSize: '1.2rem', color: '#fff', opacity: 0.8, marginBottom: 60, maxWidth: 600, margin: '0 auto 60px auto'}}>
             Choose from our premium collection of luxury vehicles for any occasion.
           </p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 40}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 40}}>
             {cars.map((car, idx) => (
               <div key={idx} style={{
                 background: '#10131a', 
@@ -406,11 +413,11 @@ function App() {
       {/* Testimonials Section */}
       <section style={{padding: '80px 0', background: '#10131a'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
-          <h2 style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>What Our Clients Say</h2>
+          <h2 className="section-title" style={{textAlign: 'center', fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>What Our Clients Say</h2>
           <p style={{textAlign: 'center', fontSize: '1.2rem', color: '#fff', opacity: 0.8, marginBottom: 60, maxWidth: 600, margin: '0 auto 60px auto'}}>
             Don't just take our word for it. Here's what our satisfied clients have to say.
           </p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 40}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: 40}}>
             {testimonials.map((testimonial, idx) => (
               <div key={idx} style={{
                 background: '#181c24', 
@@ -432,9 +439,9 @@ function App() {
       {/* Contact Section */}
       <section id="contact" style={{padding: '80px 0', background: '#181c24'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px', textAlign: 'center'}}>
-          <h2 style={{fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Contact Us</h2>
+          <h2 className="section-title" style={{fontSize: '2.5rem', color: '#FFD700', fontWeight: 700, marginBottom: 20, letterSpacing: 1}}>Contact Us</h2>
           <p style={{fontSize: '1.3rem', color: '#fff', opacity: 0.9, marginBottom: 60, maxWidth: 600, margin: '0 auto 60px auto'}}>Ready to book your luxury car? Get in touch with us today!</p>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 40, marginBottom: 50}}>
+          <div className="card-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 40, marginBottom: 50}}>
             <div style={{background: '#10131a', padding: 32, borderRadius: 16, border: '1px solid rgba(255,215,0,0.1)'}}>
               <div style={{fontSize: '3rem', marginBottom: 16}}>📞</div>
               <h3 style={{color: '#FFD700', marginBottom: 12, fontSize: '1.3rem'}}>Call Us</h3>
@@ -469,7 +476,7 @@ function App() {
       {/* Footer */}
       <footer style={{background: '#10131a', color: '#fff', padding: '60px 0 30px 0', borderTop: '1px solid rgba(255,215,0,0.2)'}}>
         <div style={{maxWidth: 1200, margin: '0 auto', padding: '0 20px'}}>
-          <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 50, marginBottom: 50}}>
+          <div className="footer-grid" style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: 50, marginBottom: 50}}>
             <div>
               <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20}}>
                 <div style={{fontSize: '2rem', color: '#FFD700'}}>🚗</div>
@@ -531,6 +538,66 @@ function App() {
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-20px); }
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+          .mobile-nav {
+            display: none !important;
+          }
+          
+          .mobile-menu-btn {
+            display: block !important;
+          }
+          
+          .banner-title {
+            font-size: 2.5rem !important;
+          }
+          
+          .banner-subtitle {
+            font-size: 1.5rem !important;
+          }
+          
+          .banner-text {
+            font-size: 1.1rem !important;
+          }
+          
+          .section-title {
+            font-size: 2rem !important;
+          }
+          
+          .card-grid {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+          
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 24px !important;
+          }
+          
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+            gap: 32px !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .banner-title {
+            font-size: 2rem !important;
+          }
+          
+          .banner-subtitle {
+            font-size: 1.2rem !important;
+          }
+          
+          .stats-grid {
+            grid-template-columns: 1fr !important;
+          }
+          
+          .section-title {
+            font-size: 1.8rem !important;
+          }
         }
       `}</style>
     </div>
